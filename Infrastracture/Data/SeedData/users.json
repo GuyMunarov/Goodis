@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 1,
+    "UserName": "U1",
+    "FullName": "U1",
+    "Password": "P1",
+    "IsActive": true
+  },
+  {
+    "Id": 2,
+    "UserName": "U2",
+    "FullName": "U2",
+    "Password": "P2",
+    "IsActive": false
+  }
+]

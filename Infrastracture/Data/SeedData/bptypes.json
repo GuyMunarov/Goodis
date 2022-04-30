@@ -1,0 +1,12 @@
+[
+  {
+    "TypeCode": "C",
+    "TypeName": "Customer"
+
+  },
+  {
+    "TypeCode": "V",
+    "TypeName": "Vendor"
+
+  }
+]

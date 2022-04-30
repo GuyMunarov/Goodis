@@ -1,0 +1,34 @@
+[
+  {
+    "BpCode": "C0001",
+    "BPName": "Customer 1",
+    "BpType": {
+      "TypeCode": "C"
+    },
+    "Active": true
+  },
+  {
+    "BpCode": "C0002",
+    "BPName": "Customer 2",
+    "BpType": {
+      "TypeCode": "C"
+    },
+    "Active": false
+  },
+  {
+    "BpCode": "V0001",
+    "BPName": "Vendor 1",
+    "BpType": {
+      "TypeCode": "V"
+    },
+    "Active": true
+  },
+  {
+    "BpCode": "V0002",
+    "BPName": "Vendor 2",
+    "BpType": {
+      "TypeCode": "V"
+    },
+    "Active": false
+  }
+]

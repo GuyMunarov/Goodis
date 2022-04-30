@@ -1,0 +1,487 @@
+{
+	"info": {
+		"_postman_id": "32a1b968-f62f-4d43-bd02-1e448b1c1fd4",
+		"name": "Goodis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Items",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJnaXZlbl9uYW1lIjoiVTEiLCJ1c2VySWQiOiIxIiwibmJmIjoxNjUxMzE2MjQ4LCJleHAiOjE2NTE5MjEwNDgsImlhdCI6MTY1MTMxNjI0OCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxLyJ9.cDD5jdW41ZtuA1NEfx-G12W1K1C1HSa4jNjh5L6vCuJfTqnR5WCIY8wuj3NOYx-OowQvh18a4h_rCVwDLSMEzA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"U1\",\r\n    \"Password\": \"P1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7126/api/items?itemCode=Itm1&ItemName=Item1&PageIndex=5&PageSize=2&Active=false",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"api",
+						"items"
+					],
+					"query": [
+						{
+							"key": "itemCode",
+							"value": "Itm1"
+						},
+						{
+							"key": "ItemName",
+							"value": "Item1"
+						},
+						{
+							"key": "PageIndex",
+							"value": "5"
+						},
+						{
+							"key": "PageSize",
+							"value": "2"
+						},
+						{
+							"key": "Active",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET BP",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJnaXZlbl9uYW1lIjoiVTEiLCJ1c2VySWQiOiIxIiwibmJmIjoxNjUxMzE2MjQ4LCJleHAiOjE2NTE5MjEwNDgsImlhdCI6MTY1MTMxNjI0OCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxLyJ9.cDD5jdW41ZtuA1NEfx-G12W1K1C1HSa4jNjh5L6vCuJfTqnR5WCIY8wuj3NOYx-OowQvh18a4h_rCVwDLSMEzA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7126/api/businessPartners?BPName=Customer 1&BpTypeCode=C&PageIndex=1&PageSize=1&Active=true&BpCode=C0001",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"api",
+						"businessPartners"
+					],
+					"query": [
+						{
+							"key": "BPName",
+							"value": "Customer 1"
+						},
+						{
+							"key": "BpTypeCode",
+							"value": "C"
+						},
+						{
+							"key": "PageIndex",
+							"value": "1"
+						},
+						{
+							"key": "PageSize",
+							"value": "1"
+						},
+						{
+							"key": "Active",
+							"value": "true"
+						},
+						{
+							"key": "BpCode",
+							"value": "C0001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Unprotected",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"U1\",\r\n    \"Password\": \"P1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7126/api/users/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Protected",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"U1111\",\r\n    \"Password\": \"P1\",\r\n    \"FullName\": \"Guy Munarov\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7126/api/users/register",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Protected",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"U1111\",\r\n    \"Password\": \"P1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7126/api/users/loginProtected",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"api",
+						"users",
+						"loginProtected"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Sale Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJnaXZlbl9uYW1lIjoiVTEiLCJ1c2VySWQiOiIxIiwibmJmIjoxNjUxMzE2MjQ4LCJleHAiOjE2NTE5MjEwNDgsImlhdCI6MTY1MTMxNjI0OCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxLyJ9.cDD5jdW41ZtuA1NEfx-G12W1K1C1HSa4jNjh5L6vCuJfTqnR5WCIY8wuj3NOYx-OowQvh18a4h_rCVwDLSMEzA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"OrderType\": 1,\r\n    \"Data\":{\r\n        \"BpCode\": \"C0001\",\r\n       \"Lines\":[\r\n        {\r\n            \"ItemCode\": \"Itm1\",\r\n            \"Quantity\": 22.2,\r\n            \"Comments\":[\r\n                {\r\n                    \"comment\": \"Comment1\"\r\n                },\r\n                {\r\n                    \"comment\": \"Comment2\"\r\n                }\r\n            ]\r\n        },{\r\n            \"ItemCode\": \"Itm2\",\r\n            \"Quantity\": 23.2,\r\n            \"Comments\":[\r\n                {\r\n                    \"comment\": \"Comment3\"\r\n                },\r\n                {\r\n                    \"comment\": \"Comment4\"\r\n                }\r\n            ]\r\n        }]\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7126/api/orders",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Sale Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJnaXZlbl9uYW1lIjoiVTEiLCJ1c2VySWQiOiIxIiwibmJmIjoxNjUxMzE2MjQ4LCJleHAiOjE2NTE5MjEwNDgsImlhdCI6MTY1MTMxNjI0OCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxLyJ9.cDD5jdW41ZtuA1NEfx-G12W1K1C1HSa4jNjh5L6vCuJfTqnR5WCIY8wuj3NOYx-OowQvh18a4h_rCVwDLSMEzA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"OrderType\": 1,\r\n    \"Data\":{\r\n    \"id\": 1,\r\n    \"lines\": [\r\n        {\r\n            \"itemCode\": \"Itm2\",\r\n            \"quantity\": 1.2,\r\n            \"comments\": [\r\n                {\r\n                    \"comment\": \"CommentAddedOnUpdate\"\r\n                }]\r\n        },\r\n        {\r\n             \"lineID\": 1,\r\n            \"itemCode\": \"Itm2\",\r\n            \"quantity\": 22555.2,\r\n            \"comments\": [\r\n                {\r\n                    \"commentLineID\": 1,\r\n                    \"comment\": \"Comment5\"\r\n                },\r\n                {\r\n                    \"commentLineID\": 2,\r\n                    \"comment\": \"Comment6\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"lineID\": 2,\r\n            \"itemCode\": \"Itm2\",\r\n            \"quantity\": 909090.2,\r\n            \"comments\": [\r\n                {\r\n                    \"commentLineID\": 3,\r\n                    \"comment\": \"Comment7\"\r\n                },\r\n                {\r\n                   \"commentLineID\": 4,\r\n                    \"comment\": \"Comment8\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"bpCode\": \"C0001\"\r\n}\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7126/api/orders",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Purchase Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJnaXZlbl9uYW1lIjoiVTEiLCJ1c2VySWQiOiIxIiwibmJmIjoxNjUxMzE2MjQ4LCJleHAiOjE2NTE5MjEwNDgsImlhdCI6MTY1MTMxNjI0OCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxLyJ9.cDD5jdW41ZtuA1NEfx-G12W1K1C1HSa4jNjh5L6vCuJfTqnR5WCIY8wuj3NOYx-OowQvh18a4h_rCVwDLSMEzA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"OrderType\": 2,\r\n    \"Data\":{\r\n        \"BpCode\": \"C0001\",\r\n       \"Lines\":[\r\n        {\r\n            \"ItemCode\": \"Itm2\",\r\n            \"Quantity\": 22.2\r\n        },{\r\n            \"ItemCode\": \"Itm1\",\r\n            \"Quantity\": 22.2      \r\n        }]\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7126/api/orders",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Purchase Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJnaXZlbl9uYW1lIjoiVTEiLCJ1c2VySWQiOiIxIiwibmJmIjoxNjUxMzE2MjQ4LCJleHAiOjE2NTE5MjEwNDgsImlhdCI6MTY1MTMxNjI0OCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxLyJ9.cDD5jdW41ZtuA1NEfx-G12W1K1C1HSa4jNjh5L6vCuJfTqnR5WCIY8wuj3NOYx-OowQvh18a4h_rCVwDLSMEzA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"OrderType\": 2,\r\n    \"Data\":{\r\n    \"id\": 1,\r\n    \"lines\": [\r\n        {\r\n            \"lineID\": 1,\r\n            \"itemCode\": \"Itm2\",\r\n            \"quantity\": 2212.2\r\n        },\r\n        {\r\n            \"lineID\": 2,\r\n            \"itemCode\": \"Itm2\",\r\n            \"quantity\": 2565652.2\r\n        }\r\n    ],\r\n    \"bpCode\": \"C0001\"\r\n}}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7126/api/orders",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJnaXZlbl9uYW1lIjoiVTEiLCJ1c2VySWQiOiIxIiwibmJmIjoxNjUxMzE2NDMwLCJleHAiOjE2NTE5MjEyMzAsImlhdCI6MTY1MTMxNjQzMCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxLyJ9.ehRTOLjBOmJl7knqa1hilQzNHha2ioUE_BhvzfoZ2E3mF7EKb0XrTML0cXdgGeiBhh-OqGP4FJwMZH783ozhxg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7126/api/orders/type/1/id/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"api",
+						"orders",
+						"type",
+						"1",
+						"id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sale Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJnaXZlbl9uYW1lIjoiVTEiLCJ1c2VySWQiOiIxIiwibmJmIjoxNjUxMzE2NDMwLCJleHAiOjE2NTE5MjEyMzAsImlhdCI6MTY1MTMxNjQzMCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxLyJ9.ehRTOLjBOmJl7knqa1hilQzNHha2ioUE_BhvzfoZ2E3mF7EKb0XrTML0cXdgGeiBhh-OqGP4FJwMZH783ozhxg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7126/api/orders/type/1/id/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"api",
+						"orders",
+						"type",
+						"1",
+						"id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Purchase Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJnaXZlbl9uYW1lIjoiVTEiLCJ1c2VySWQiOiIxIiwibmJmIjoxNjUxMzE2NDMwLCJleHAiOjE2NTE5MjEyMzAsImlhdCI6MTY1MTMxNjQzMCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAxLyJ9.ehRTOLjBOmJl7knqa1hilQzNHha2ioUE_BhvzfoZ2E3mF7EKb0XrTML0cXdgGeiBhh-OqGP4FJwMZH783ozhxg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7126/api/orders/type/2/id/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7126",
+					"path": [
+						"api",
+						"orders",
+						"type",
+						"2",
+						"id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
